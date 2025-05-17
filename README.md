@@ -22,46 +22,49 @@ This project implements a concurrent web crawler in Go using the Colly framework
 
 ## How to Run
 
-Clone the repository and run the program using:
-go run .
+Clone the repository and run the program using:  
 
-The input file urls.json should contain a list of Wikipedia URLs in JSON array format:
+go run .  
+
+The input file urls.json should contain a list of Wikipedia URLs in JSON array format:  
+
 ## Example urls.json
-
-[
-  "https://en.wikipedia.org/wiki/Robotics",
-  "https://en.wikipedia.org/wiki/Robot",
-  "https://en.wikipedia.org/wiki/Chatbot"
-]
+[  
+  "https://en.wikipedia.org/wiki/Robotics",  
+  "https://en.wikipedia.org/wiki/Robot",  
+  "https://en.wikipedia.org/wiki/Chatbot"  
+]  
 
 ## Output
-The file output/texts.jl will contain one JSON object per line, representing one Wikipedia page. Example:
+The file output/texts.jl will contain one JSON object per line, representing one Wikipedia page. Example:  
 
-{
-  "title": "Robotics",
-  "url": "https://en.wikipedia.org/wiki/Robotics",
-  "text": "Robotics is an interdisciplinary branch...",
-  "tags": ["Automation", "Artificial intelligence"]
-}
+{  
+  "title": "Robotics",  
+  "url": "https://en.wikipedia.org/wiki/Robotics",  
+  "text": "Robotics is an interdisciplinary branch...",  
+  "tags": ["Automation", "Artificial intelligence"]  
+}  
 
-Raw HTML is saved to output/wikipages/<Title>.html.
+Raw HTML is saved to output/wikipages/<Title>.html.  
 
 ## Performance Comparison
-Language	Time (10 pages)
-Python (Scrapy)	12.63 seconds
-Go (Colly)	1.29 seconds (Sending 10 request a time)
+Language	Time (10 pages)  
+Python (Scrapy)	12.63 seconds  
+Go (Colly)	1.29 seconds (Sending 10 request a time)  
 
-Go's performance benefits from native concurrency and lower I/O overhead.
+Go's performance benefits from native concurrency and lower I/O overhead.  
 
 ## Testing
-This project includes a unit test for filename sanitization.
+This project includes a unit test for filename sanitization.  
 
-Run tests with:
-go test
+Run tests with:  
+go test  
 
 ## GenAI Tools
-This project used OpenAI ChatGPT-4 to assist with:
-    Code structure design and modularization
-    Fixing main.go
-    Generating documentation and test code
-Documentation of AI usage is provided as required:
+This project used OpenAI ChatGPT-4 to assist with:  
+    Code structure design and modularization  
+    Fixing main.go  
+    Generating documentation and test code  
+Documentation of AI usage is provided as required:  
+
+[ChatGPT conversation log](https://chatgpt.com/share/6827f2e8-43b0-8008-bf8f-d077038f671f)
